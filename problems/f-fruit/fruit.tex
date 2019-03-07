@@ -1,0 +1,38 @@
+
+\begin{problem}{Fruit on the Tree}
+{stdin}{stdout}
+{2 second}{}{}
+
+``Triangoes'', a new type of fruit, are in triangular shapes and taste like mangoes. However, nobody in the world has ever seen ``triangoes'' since they always grow implicitly on the tree and hide in the triangles. Formally, a ``triango'' tree is an undirected weighted tree and a ``triango'' is a set of three vertices on the ``triango'' tree such that the lengths of the three paths between each pair of these three vertices satisfy the triangle inequality; that is to say, they form a triangle.
+
+After a long expedition, \Suzukaze has eventually found a ``triango'' tree in his house. He needs your help to count the number of ``triangoes'' on the ``triango'' tree. Can you help him?
+
+\InputFile
+
+The first line contains an integer $n$ ($1 \le n \le 10^5$), the number of nodes on the ``triango'' tree. The nodes on the ``triango'' tree are labeled from 1 to $n$.
+
+In the following $n-1$ lines, each of the lines contains 3 integers $u, v, w$ ($1 \le u,v \le n; u \neq v;1 \le w \le 10^5$), which means that there is a weighted edge whose weight is $w$ connecting node $u$ and node $v$.
+
+It's guaranteed that the input data is a tree.
+
+\OutputFile
+
+Output an integer - the number of ``triangoes'' on the ``triango'' tree.
+
+\Examples
+
+\begin{example}
+\exmp{
+7
+1 2 1
+1 3 1
+2 4 1
+2 5 1
+3 6 1
+3 7 1
+}{%
+8
+}%
+\end{example}
+
+\end{problem}
