@@ -1,39 +1,38 @@
-\newcommand{\Suzukaze}{\textbf{\textcolor[rgb]{1,0.5,0}{Suzukaze}}\,}
 
 \begin{problem}{Bigram Language Model}
 {stdin}{stdout}
 {5 second}{}{}
 
-In natural language processing, language models gives how likely a certain English sentence appear in a context (e.g. casual conversations, academic papers, or news websites) by assigning a probability distribution over all possible sentences. Bigram language model approaches this modeling problem by estimating the transition probabilities from previous word to next word. Formally, 
+In natural language processing, language models gives how likely a certain English sentence appear in a context (e.g. casual conversations, academic papers, or news websites) by assigning a probability distribution over all possible sentences. Bigram language model approaches this modeling problem by estimating the transition probabilities from previous word to next word. Formally,
 \begin{align*}
 	P(S = w_1 w_2 \hdots w_m) &= P(w_1)P(w_2 \mid w_1) \hdots P(w_m \mid w_{m-1})
 \end{align*}
 
-We can estimate transition probabilities from word $s$ to $t$ from a corpus (a collection of sentences) collected from the context: 
+We can estimate transition probabilities from word $s$ to $t$ from a corpus (a collection of sentences) collected from the context:
 \begin{align*}
 	P(t \mid s) = \frac{c(s,t)}{\sum_{t'}{c(s,t')}}
 \end{align*}
-where $c(s,t)$ denotes the total number of times that word $t$ comes right after word $s$ in the same sentence in the corpus. 
+where $c(s,t)$ denotes the total number of times that word $t$ comes right after word $s$ in the same sentence in the corpus.
 
-\Suzukaze has collected a corpus and is trying to compute the probability of some sentences. He needs your help to get some transition probabilities. Can you help him? 
+\Suzukaze has collected a corpus and is trying to compute the probability of some sentences. He needs your help to get some transition probabilities. Can you help him?
 
 \InputFile
 
-The first line contains an integer $n$ ($1 \le n \le 1000$), the number of sentences in the corpus. 
+The first line contains an integer $n$ ($1 \le n \le 1000$), the number of sentences in the corpus.
 
-In the following $n$ lines, the $i$-th line starts with an integer $m_i$ ($1 \le m_i \le 100$), the number of words in the $i$-th sentence. It is then followed by $m_i$ space-separated words. 
+In the following $n$ lines, the $i$-th line starts with an integer $m_i$ ($1 \le m_i \le 100$), the number of words in the $i$-th sentence. It is then followed by $m_i$ space-separated words.
 
-The next line contains an integer $q$ ($1 \le q \le 10^4$), the number of queries. 
+The next line contains an integer $q$ ($1 \le q \le 10^4$), the number of queries.
 
-In the following $q$ lines, each line contains two space-separated words $s$ and $t$, querying for the estimated transition probability from word $s$ to $t$. 
+In the following $q$ lines, each line contains two space-separated words $s$ and $t$, querying for the estimated transition probability from word $s$ to $t$.
 
-All words in the corpus and queries are no more than 10 characters long and contain lowercase letters only. 
+All words in the corpus and queries are no more than 10 characters long and contain lowercase letters only.
 
 \OutputFile
 
-For each query, output a line containing a real number - the estimated transition probability for the queried word pair. Always print 4 digits after the decimal point. 
+For each query, output a line containing a real number - the estimated transition probability for the queried word pair. Always print 4 digits after the decimal point.
 
-If you cannot estimate the transition probability from the corpus, print "Insufficient data" instead. 
+If you cannot estimate the transition probability from the corpus, print "Insufficient data" instead.
 
 \Examples
 

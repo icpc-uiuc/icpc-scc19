@@ -1,0 +1,42 @@
+
+\begin{problem}{AK the Problems}
+{stdin}{stdout}
+{2 second}{}{}
+
+\Suzukaze, a Codefalser who has the \master title, is now competing in a contest on Codefalses. He has solved all the problems except the last one and there are only ten minutes left. This is a crucial contest to \Suzukaze so he is asking for your help. The problem statement follows:
+
+\par
+Two players are given a forest(undirected acyclic graph) and decide to play a game on it. The first player plays first and they take alternating turns. In each turn, the current player can either 1) delete an edge or 2) delete a vertex and the edges on it. Whoever is unable to make a move, loses. Determine who wins if they both play optimally.
+
+\par
+If \Suzukaze  solve this last problem and AK the problemset, he will achieve a new title - \grandmaster. However, if he fail on this problem, he will lose all the ratings and stop competing in any contests. Can you help him solve this problem?
+
+\InputFile
+
+The first line contains two integers $n$ and $m$ ($1 \le n \le 10^5,0 \le m \le n-1 $), the number of vertices in the forest and the number of edges in the forest. The vertices in the forest are labeled from 1 to $n$.
+
+In the following $m$ lines, each of the lines contains 2 integers $u, v$ ($1 \le u,v \le n; u \neq v$), which means that there is an edge connecting vertex $u$ and vertex $v$.
+
+It's guaranteed that the input data is a forest.
+
+\OutputFile
+
+If the first player will win the game, output "Suzukaze becomes a grandmaster!" (without quote). Otherwise, output "Suzukaze loses all his ratings!" (without quote).
+
+\Examples
+
+\begin{example}
+\exmp{
+8 6
+1 2
+2 3
+4 5
+5 6
+6 7
+7 8
+}{%
+Suzukaze loses all his ratings!
+}%
+\end{example}
+
+\end{problem}
