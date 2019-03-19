@@ -1,0 +1,51 @@
+\begin{problem}{Diameter}
+{stdin}{stdout}
+{2 seconds}{}{}
+
+\pittoresque loves playing a game called Strike'em all. In this game, he is given some points on a 2-D grid, and he finds some straight segments that together cover all the points. Now after finishing finding the segments, \pittoresque is board and wants to find something interesting about the points. Specifically, he wants to know whats the maximum (eucledian) distance between two points among all pair of points in this grid.
+
+\InputFile
+
+The first line contains two integers $n$ and $k$ ($2 \le n \le 10^5$, $1 \le k \le 500$), the number of points and the number of segments.
+
+In the following $k$ sections, the first line of each section contains a single integer $m_i$, the number of points on segment $i$. And the following $m_i$ lines contains a pair of integer $x_{ij}, y_{ij}$($-10^9 \le x_{ij}, y_{ij} \le 10^9$). It is guaranteed that these points are on common segment.
+
+It is also guaranteed that no two points collide with the other, and $\sum_{i = 1}^{k} m_i = n$
+
+\OutputFile
+
+Output the \textit{square} of the maximum  euclidean distance between all pair of points
+
+\Examples
+
+\begin{example}
+\exmp{
+5 2
+3
+1 2
+2 3
+3 4
+2
+1 0
+10 0
+}{%
+85
+}%
+\end{example}
+
+\begin{example}
+\exmp{
+4 1
+4
+1 2
+2 3
+3 4
+4 5
+}{%
+18
+}%
+\end{example}
+
+
+
+\end{problem}
