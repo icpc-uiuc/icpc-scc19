@@ -6,45 +6,45 @@ The United Institute for Underground Construction(UIUC) is a famous company that
 \begin{itemize}
     \item As the stations are crowded, there is only enough space to build one machine at each station.
     \item The supply for all vending machines comes from a single manufacturing factory, which is a constant number. And the total amount of drinks sold should not exceed this number,
-    \item For each station with a vending machine, a fixed amount of people will buy drinks at a certain price. 
+    \item For each station with a vending machine, a fixed amount of people will buy drinks. 
 \end{itemize}
 
-To be specific, there are $n$ stations numbered from $1$ to $n$. At the $i$th station, you can place a vending machine such that exactly $p_i$ people come and buy drinks, and each drink will provide a revenue of $v_i$. Since \pittoresque is in a small town(of course, not many people lives in a corn field) the total number of people that buy drinks across all the stations is $\sum_{i=1}^n p_i = P \leq 2 * 10^5$. Please help \pittoresque calculate the maximum revenue he can get by constructing the stations. 
+To be specific, there are $n$ stations numbered from $1$ to $n$. At the $i$th station, you can place a vending machine such that exactly $p_i$ people come and buy drinks. Since \pittoresque is in a small town(of course, not many people lives in a corn field) the total number of people that buy drinks across all the stations is $\sum_{i=1}^n p_i = P \leq 2 * 10^5$. Please help \pittoresque calculate the maximum drinks that can be sold by constructing the stations. 
 
 \InputFile
 
 The first line contains two integers $n$ and $W$ ($1 \le n \le 10^5$, $1 \le n \le 2 * 10^5$), the number of stations and the number of  drinks supplied by the manufacturing company.
 
-In the following $n$ lines, the $i$-th line contains two integers $p_i$ and $v_i$($1 \le p_i \le 2 * 10^5$, $1 \le v_i \le 10^9$), the number of people buying drinks at each station and the revenue for each drink at that station.
+In the following $n$ lines, the $i$-th line contains a single integer $p_i$($1 \le p_i \le 2 * 10^5$), the number of people buying drinks at station $i$.
 
 It is guaranteed that $\sum_i p_i \leq 2 * 10^5$.
 
 \OutputFile
 
-Output the maximum revenue among all ways to place the vending machines.
+Output the maximum number of drinks sold among all ways to place the vending machines.
 
 \Examples
 
 \begin{example}
 \exmp{
 3 10
-1 2
-1 10
-11 100000
+1 
+1
+11
 }{%
-12
+2
 }%
 \end{example}
 
 \begin{example}
 \exmp{
 4 10
-3 1
-5 5
-3 3
-4 6
+3
+5
+3
+4
 }{%
-34
+10
 }%
 \end{example}
 
