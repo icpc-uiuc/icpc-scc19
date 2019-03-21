@@ -4,7 +4,7 @@
 
 Farmer \pittoresque has a farm planted with two types of fruit, apples and bananas. Every fall, \pittoresque needs to walk inside his farm to harvest these delicious fruit. However, as a banana-lover, \pittoresque only cares about collecting bananas and doesn't care about how many apples he harvested. 
 
-The farm can be modelled as a graph where vertices are apple trees or orange trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that its possible to reach every orange tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build useless roads. That is, there should be one, but exactly one path of roads to reach to a vertex from the entrance. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed.
+The farm can be modelled as a graph where vertices are apple trees or orange trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that its possible to reach every orange tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build roads that form a cycle, as he consider cycles ugly. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed.
 
 \InputFile
 
@@ -18,7 +18,7 @@ It is guaranteed that it is possible to reach every banana tree from the entranc
 
 \OutputFile
 
-Output the maximum ratio between sum of all happiness gained and sum of all energy consumed, among all configuration of road building that satisfy the aforementioned constraints. Any answer within an absolute ratio of $10^{-3}$ or a relative ratio of $10^{-3}$ is accepted.
+Output the maximum ratio between sum of all happiness gained and sum of all energy consumed, among all configuration of road building that satisfy the aforementioned constraints. Any answer within an absolute ratio of $10^{-3}$ is accepted. You \textbf{don't} have to print exactly 6 digits after the decimal point as illustrated in the examples.
 
 \Examples
 
@@ -31,7 +31,7 @@ Output the maximum ratio between sum of all happiness gained and sum of all ener
 3 4 10 1
 1 5 10 1
 }{%
-10.0
+10.000000
 }%
 \end{example}
 
@@ -45,7 +45,7 @@ Output the maximum ratio between sum of all happiness gained and sum of all ener
 4 5 1 1
 2 5 1 400
 }{%
-0.0909090909
+4347.913043
 }%
 \end{example}
 
