@@ -6,15 +6,34 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
+\title{UIUC ICPC Spring Coding Contest 2019 \\ Editorial}
+\date{}
+
 \begin{document}
 
+\maketitle
+
 \section*{A - AK the Problems}
+
+
 
 \section*{B - Bigram Language Model}
 
 For each query $(s,t)$, the nominator is the number of co-occurrences of $(s,t)$ in the corpus, and the denominator is the number of occurrences of $s$ as non-terminal word in a sentence. These values can be pre-processed by a single pass over the corpus. 
 
 The tricky part is that the number of distinct words appearing in the corpus $w$ may be up to $10^5$, so it is impossible to explicitly construct the co-occurrence matrix of size $w \times w$. The observation is that the sum of all elements in this matrix is bounded by the size of corpus, so we can use some sparse-matrix representation techniques (e.g. only recording which entries are non-zero and the values they hold). 
+
+\section*{C - Construct Underground System}
+
+
+
+\section*{D - Diameter}
+
+
+
+\section*{F - Fruit on the Tree}
+
+
 
 \section*{G - Greenberg Mass Comparison}
 
@@ -27,5 +46,9 @@ Let $B_n$ denote the answer for $n$. Consider the number of elements \textbf{NOT
 with base case $B_0 = 1$. 
 
 Notice that Bell numbers can get very large quickly, so coding this problem in Python or Java will save you a lot of trouble. 
+
+\section*{J - Juicy}
+
+
 
 \end{document}
