@@ -4,7 +4,7 @@
 
 Farmer \pittoresque has a farm planted with two types of fruit, apples and bananas. Every fall, \pittoresque needs to walk inside his farm to harvest these delicious fruit. However, as a banana-lover, \pittoresque only cares about collecting bananas and doesn't care about how many apples he harvested. 
 
-The farm can be modelled as a graph where vertices are apple trees or banana trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that its possible to reach every banana tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build roads that form a cycle, as he consider cycles ugly. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed.
+The farm can be modelled as a graph where vertices are apple trees or banana trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that its possible to reach every banana tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build roads that form a cycle, nor does he want to build roads that he cannot reach. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed.
 
 \InputFile
 
@@ -12,9 +12,9 @@ The first line contains two integers $a$ and $b$ ($0 \le a \le 10$, $1 \le b \le
 
 Next line contains a single integer $m$, $b \leq m \leq 1000$, the number of roads that can be built.
 
-Next $m$ lines contain information about the roads that can be built. Each line contains four numbers $u, v, h, e$, $1 \le u, v \le a + b + 1, u \neq v$, $0 \le h \le 10^9, 1 \le e \le 10^9$. This means that the if a road connecting $u$ and $v$ is built, $e$ energy is consumed and $h$ happiness is gained.
+Next $m$ lines contain information about the roads that can be built. Each line contains four numbers $u, v, h, e$, $1 \le u, v \le a + b + 1, u \neq v$, $0 \le h \le 10^6, 1 \le e \le 10^6$. This means that the if a road connecting $u$ and $v$ is built, $e$ energy is consumed and $h$ happiness is gained.
 
-It is guaranteed that it is possible to reach every banana tree from the entrance.
+It is guaranteed that it is possible to reach every banana tree from the entrance. Between two vertices, multiple roads may exist.
 
 \OutputFile
 
