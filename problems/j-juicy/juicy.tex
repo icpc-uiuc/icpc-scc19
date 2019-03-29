@@ -2,23 +2,23 @@
 {stdin}{stdout}
 {5 seconds}{}{}
 
-Farmer \pittoresque has a farm planted with two types of fruit, apples and bananas. Every fall, \pittoresque needs to walk inside his farm to harvest these delicious fruit. However, as a banana-lover, \pittoresque only cares about collecting bananas and doesn't care about how many apples he harvested. 
+Farmer \pittoresque has a farm planted with two types of fruit, apples and bananas. Every fall, \pittoresque needs to walk inside his farm to harvest these delicious fruits. However, as a banana-lover, \pittoresque only cares about collecting bananas and doesn't care about how many apples he harvested.
 
-The farm can be modelled as a graph where vertices are apple trees or banana trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that its possible to reach every banana tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build roads that form a cycle, nor does he want to build roads that he cannot reach. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed.
+The farm can be modelled as a graph where vertices are apple trees or banana trees, and there is an additional vertex indicating the entrance of the farm. To prepare for harvesting, \pittoresque needs to build (bidirectional) roads throughout his farm between vertices. The roads must be built such that it is possible to reach every banana tree from the entrance. As a dedicated person, \pittoresque gains some happiness during road building, despite spending some energy. Energy and happiness may be different for different roads. Nevertheless, \pittoresque doesn't want to build roads that form a cycle, nor does he want to build roads that he cannot reach. Finally, \pittoresque wants to maximize the ratio of sum of all happiness gained and sum of all energy consumed after he build the roads.
 
 \InputFile
 
-The first line contains two integers $a$ and $b$ ($0 \le a \le 10$, $1 \le b \le 100$), the number of apple trees and the number of banana trees. You may assume that the apple trees have index $1 ... a$, the banana trees have index $a + 1, ... a + b$ and the entrance have index $a + b + 1$.
+The first line contains two integers $a$ and $b$ ($0 \le a \le 10$, $1 \le b \le 100$), the number of apple trees and the number of banana trees. You may assume that the apple trees have index $1, ..., a$, the banana trees have index $a + 1, ..., a + b$ and the entrance have index $a + b + 1$.
 
 Next line contains a single integer $m$, $b \leq m \leq 1000$, the number of roads that can be built.
 
-Next $m$ lines contain information about the roads that can be built. Each line contains four numbers $u, v, h, e$, $1 \le u, v \le a + b + 1, u \neq v$, $0 \le h \le 10^6, 1 \le e \le 10^6$. This means that the if a road connecting $u$ and $v$ is built, $e$ energy is consumed and $h$ happiness is gained.
+Next $m$ lines contain information about the roads that can be built. Each line contains four integers $u, v, h, e$, $1 \le u, v \le a + b + 1, u \neq v$, $0 \le h \le 10^6, 1 \le e \le 10^6$. This means that if a road connecting $u$ and $v$ is built, $e$ energy is consumed and $h$ happiness is gained.
 
 It is guaranteed that it is possible to reach every banana tree from the entrance. Between two vertices, multiple roads may exist.
 
 \OutputFile
 
-Output the maximum ratio between sum of all happiness gained and sum of all energy consumed, among all configuration of road building that satisfy the aforementioned constraints. Any answer within an absolute ratio of $10^{-3}$ is accepted. You \textbf{don't} have to print exactly 6 digits after the decimal point as illustrated in the examples.
+The maximum ratio between sum of all happiness gained and sum of all energy consumed, among all configuration of road building that satisfy the aforementioned constraints, can be expressed as $P/Q$, where $P$ and $Q$ are integers and they are co-prime. For your convenience, you just need to output $P\times Q$.
 
 \newpage
 
@@ -33,7 +33,7 @@ Output the maximum ratio between sum of all happiness gained and sum of all ener
 3 4 10 1
 1 5 10 1
 }{%
-10.000000
+10
 }%
 \end{example}
 
@@ -47,7 +47,7 @@ Output the maximum ratio between sum of all happiness gained and sum of all ener
 4 5 1 1
 2 5 1 400
 }{%
-4347.913043
+2300046
 }%
 \end{example}
 
