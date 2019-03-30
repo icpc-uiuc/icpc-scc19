@@ -2,10 +2,11 @@
 // Always comment out package when submitting.
 
 import java.io.*;
+import java.math.BigInteger;
 import java.util.*;
 
 // J juicy
-public class juicy_zihan {
+public class Main {
     public static class Task {
 
         public class DisjointUnion {
@@ -57,6 +58,7 @@ public class juicy_zihan {
                 edges.add(new Edge(u, v, h, e));
             }
             double lo = 0.0, hi = 1e9;
+            long bestP = 0, bestQ = 1;
             while (lo < hi - 1e-9) {
                 double mid = (lo + hi) / 2;
                 for (Edge e: edges) {
@@ -69,11 +71,13 @@ public class juicy_zihan {
                     }
                 });
                 double bestVal = -9e18;
+                long sumH = 0, sumE = 0;
                 for (int i = 0; i < 1 << a; i++) {
                     Set<Integer> forbid = new HashSet<>();
                     for (int j = 0; j < a; j++) {
                         if (((1 << j) & i) != 0) forbid.add(j);
                     }
+                    long H = 0, E = 0;
                     int needEdges = a - forbid.size() + b;
                     double totalVal = 0.0;
                     DisjointUnion djs = new DisjointUnion(a + b + 1);
@@ -81,21 +85,36 @@ public class juicy_zihan {
                         if (forbid.contains(e.u) || forbid.contains(e.v)) continue;
                         if (djs.union(e.u, e.v)) {
                             totalVal += e.realVal;
+                            H += e.h;
+                            E += e.e;
                             needEdges--;
                             if (needEdges == 0) break;
                         }
                     }
                     if (needEdges == 0) {
-                        bestVal = Math.max(totalVal, bestVal);
+                        if (totalVal > bestVal) {
+                            bestVal = totalVal;
+                            sumH = H;
+                            sumE = E;
+                        }
+//                        bestVal = Math.max(totalVal, bestVal);
                     }
                 }
                 if (bestVal >= 0) {
+                    bestP = sumH;
+                    bestQ = sumE;
                     lo = mid;
                 } else {
                     hi = mid;
                 }
             }
-            pw.printf("%.6f\n", (lo + hi) / 2);
+            long gcd = BigInteger.valueOf(bestP).gcd(BigInteger.valueOf(bestQ)).longValue();
+            long bp = bestP / gcd;
+            long bq = bestQ / gcd;
+            long tot = bp * bq;
+            pw.println(tot);
+//            pw.println(bestP + " " + bestQ);
+//            pw.printf("%.6f\n", (lo + hi) / 2);
         }
     }
 
