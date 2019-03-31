@@ -68,6 +68,20 @@ with base case $B_0 = 1$.
 
 Notice that Bell numbers can get very large quickly, so coding this problem in Python or Java will save you a lot of trouble.
 
+\section*{H - Hamiltonian Farm}
+
+
+The graph in the problem is a tournament. And every tournament contains at least a Hamiltonian path. We can prove this by proving that it is possible to add a vertex into an existing simple path to form a new simple path, which is like the insertion sort and we will leave the proof as an exercise for you. 
+
+\par
+However, the complexity of the insertion sort is $O(n^2)$ and you will get Time Limit Exceeded. A quick observation is that we can find a pivot vertex and divide the graph into two parts, one part with vertices having directed edge to the pivot vertex and the other part with vertices having directed edge from the pivot vertex, and sort these two parts recursively. This results in an expected complexity of $O(nlogn)$. If you choose your pivot \textbf{randomly}, you can pass the problem.
+
+\par
+A safer solution is using mergesort, in which you need to find a way to combine two simple paths into one. We will leave the method as an exercise for you again. Mergesort results in $O(nlogn)$, which can also pass the problem.
+
+\par
+A notable thing is that to find the direction of an edge, you need around $log10^{15}$ computations. Therefore, the time limit for this problem is quite strict; you should implement a concise solution to pass the problem.
+
 \section*{J - Juicy}
 
 

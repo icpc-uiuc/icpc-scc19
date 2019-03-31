@@ -4,7 +4,7 @@
 
 Last year, your team failed on helping the Codefalser \Suzukaze  AK the problemset. Therefore, \Suzukaze decided to retire from competitive programming and became a farmer since he wants to own a farm as \pittoresque does. \Suzukaze is an orange-lover so he decided to plant only orange trees in his farm in spring. Winter is coming next week! \Suzukaze is planning to walk inside his farm to harvest his favorite fruit. However, as a forgetful farmer, \Suzukaze loses his memory about the configuration of his farm. Fortunately, as a careful programmer, \Suzukaze stored the configuration of his farm in the computer as a function in case of he gets into this kind of desperate situation.
 \par
-The farm can be modelled as a graph with n vertices where vertices are orange trees, and the edges in the graph can be derived from the function $f$:
+The farm can be modelled as a graph with $n$ vertices where vertices are orange trees, and the edges in the graph can be derived from the function $f$:
 
 $$f(i,j)=
 \begin{cases}
@@ -13,7 +13,7 @@ $$f(i,j)=
 1-f(j,i)& \text{$i>j$}
 \end{cases}$$
 
-where $1\leq i,j\leq n$, $p$ and $q$ are non-negative integers less than $10^{9}+7$. If $f(i,j)=1$, there is a directed edge from $i$ to $j$.
+where $i$ and $j$ are the indices of the vertices ($1\leq i,j\leq n$), $p$ and $q$ are non-negative integers less than $10^{9}+7$. If $f(i,j)=1$, there is a directed edge from $i$ to $j$.
 
 \par
 As a lazy farmer, \Suzukaze wants to find a path that can visit each orange tree exact once. Can you help him find this path in compensation for your failure last year?
