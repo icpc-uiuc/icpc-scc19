@@ -1,0 +1,44 @@
+\begin{problem}{Innovative Alignment}
+{stdin}{stdout}
+{2 seconds}{}{}
+
+\Stringers can only read books if the $i$'th word of consecutive sentences start at the same position. If this condition is not met, they cannot read their books, and get rather upset. Can you help the \Stringers by aligning all the given words correctly?
+
+\InputFile
+
+The first line contains one integer $n$ ($1 \leq n \leq 10)$, representing the number of sentences you will be given to align. 
+
+The next $n$ lines that follow contain the sentences to align. Each sentence contains up to $10$ words, and each word has up to $10$ characters. The alphabet for this problem will only consist of uppercase and lowercase English letters.
+\OutputFile
+
+Output the correct alignment of the input strings, such that the $i$'th word of each sentence starts at the same index. 
+
+\Examples
+
+\begin{example}
+\exmp{
+2
+Hello World
+UoI IPL
+}{%
+Hello World
+UoI   IPL
+}%
+\end{example}
+
+\begin{example}
+\exmp{
+3
+Align my life plz
+CTCI sucks
+Welcome to check in 
+}{%
+Align   my    life  plz 
+CTCI    sucks 
+Welcome to    check in 
+}%
+\end{example}
+
+
+
+\end{problem}
