@@ -5,62 +5,49 @@
 
 using namespace std;
 
-const int maxN = 1e5 + 10, blockSize = 800;
+const int maxN = 1e5 + 10, blockSize = 600, maxV = maxN;
 
 typedef pair < int, int > pi;
 typedef set < pi >::iterator iter;
 
 struct Update { int p, fr, to, t; };
 struct Query { int l, r, t; };
+struct Node { int l, r, s, v; };
 
-int n, q, a[maxN], b[maxN], res[maxN], cnt_op, cntl, cntr, cntt;
-unordered_map < int, int > cnt;
+int n, q, a[maxN], b[maxN], res[maxN], cnt_op, cntl, cntr, cntt, num_node;
 vector < Update > updates;
 vector < Query > queries;
+Node node[maxN * 50];
 bool is_query[maxN];
-set < pi > seg;
 
-void merge(iter it) {
-    auto nit = next(it);
-    int l = it->first, r = it->second;
-    if (nit != seg.end() && nit->first == it->second + 1) {
-        r = nit->second;
-        seg.erase(nit);
+int update(int k, int l, int r, int i, int v) {
+    if (i < l || r < i) return k;
+    if (k == 0) k = ++num_node;
+    if (l == r) {
+        node[k].v += v;
+        node[k].s = node[k].v > 0;
+        return k;
     }
-    if (it != seg.begin()) {
-        auto pit = prev(it);
-        if (pit->second == it->first - 1) {
-            l = pit->first;
-            seg.erase(pit);
-        }
-    }
-    if (it->first != l || it->second != r) {
-        seg.erase(it);
-        seg.insert({l, r});
-    }
+    int mid = (l + r) >> 1;
+    node[k].l = update(node[k].l, l, mid, i, v);
+    node[k].r = update(node[k].r, mid + 1, r, i, v);
+    node[k].s = node[node[k].l].s + node[node[k].r].s;
+    return k;
 }
 
-void add(int v) {
-    ++cnt[v]; ++cnt_op;
-    if (cnt[v] == 1) {
-        seg.insert({v, v});
-        merge(seg.lower_bound({v, v}));
-    }
-}
-
-void remove(int v) {
-    --cnt[v]; ++cnt_op;
-    if (cnt[v] == 0) {
-        auto it = seg.upper_bound({v, n + 1}); --it;
-        if (it->first <= v - 1) seg.insert({it->first, v - 1});
-        if (it->second >= v + 1) seg.insert({v + 1, it->second});
-        seg.erase(it);
-    }
+int get(int k, int l, int r) {
+    if (l == r) return l;
+    int mid = (l + r) >> 1;
+    if (!node[k].l) return l;
+    if (node[node[k].l].s < mid - l + 1)
+        return get(node[k].l, l, mid);
+    if (!node[k].r) return mid + 1;
+    return get(node[k].r, mid + 1, r);
 }
 
 void apply(int l, int r, int p, int v) {
     if (l <= p && p <= r)
-        add(v), remove(a[p]);
+        update(1, 0, maxV, v, 1), update(1, 0, maxV, a[p], -1);
     a[p] = v;
 }
 
@@ -69,7 +56,7 @@ int get_block(int x) {
 }
 
 int main() {
-    cin >> n;
+    cin >> n; num_node = 1;
     for (int i = 1; i <= n; ++i) scanf("%d", &a[i]), b[i] = a[i];
     cin >> q;
     updates.push_back({0, 0, 0, 0});
@@ -100,11 +87,11 @@ int main() {
         for (; updates[now].t > qu.t; --now) apply(l, r, updates[now].p, updates[now].fr), ++cntt;
         for (; updates[now + 1].t <= qu.t; ++now)
             apply(l, r, updates[now + 1].p, updates[now + 1].to), ++cntt;
-        while (r < qu.r) ++r, add(a[r]), ++cntr;
-        while (r > qu.r) remove(a[r]), --r, ++cntr;
-        while (l < qu.l) remove(a[l]), ++l, ++cntl;
-        while (l > qu.l) --l, add(a[l]), ++cntl;;
-        res[qu.t] = seg.begin()->first ? 0 : seg.begin()->second + 1;
+        while (r < qu.r) ++r, update(1, 0, maxV, a[r], 1), ++cntr;
+        while (r > qu.r) update(1, 0, maxV, a[r], -1), --r, ++cntr;
+        while (l < qu.l) update(1, 0, maxV, a[l], -1), ++l, ++cntl;
+        while (l > qu.l) --l, update(1, 0, maxV, a[l], 1), ++cntl;;
+        res[qu.t] = get(1, 0, maxV);
         //cout << qu.t << endl;
     }
     for (int i = 1; i <= q; ++i) 
