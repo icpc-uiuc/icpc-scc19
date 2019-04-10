@@ -2,22 +2,24 @@
 {stdin}{stdout}
 {2 seconds}{}{}
 
-U of I's Chancellor - Robert Jones - has thought of a new hashing function to store administrator records, and he's enlisted you to help him build it! His hash function $\phi$ will output a single integer, and is defined as follows: \\ \\
-$\phi(n) = (25^l(m+l)) \% N$, where $m$ and $l$ represent the most and least significant bits of $n$, and $N$ represents the number of significant bits of $n$. \\ \\ 
-There aren't too many administrator records, so for now let's assume a 32-bit number system. Your job is to provide Chancellor Jones with the three components of his hashing function given the number of records $k$, and the unique identifier of each record $n$. And yes, please forget about the absurdity of his hashing algorithm. Unfortunately, our Chancellor has never taken a formal CS class. 
+U of I's Chancellor - Robert Jones - has thought of a new hashing function to store administrator records, and he's enlisted you to help him build it! His hash function $\phi(n)$ will output a single integer, and needs the following pieces of information: $l$, $r$, and $N$, where $l$ represents the leftmost bit of  $n$, $r$ represents the rightmost bit of $n$, and $N$ represents the number of 1-bits in $n$. \\ \\
+There aren't too many administrator records, so for now let's assume an unsigned 32-bit number system. Your job is to provide Chancellor Jones with the three components of his hashing function given the number of records $k$, and the unique identifier of each record $n$. And yes, please forget about the absurdity of his hashing algorithm. Unfortunately, our Chancellor has never taken a formal CS class.
 
 \InputFile
-The first line contains the number of records $k$, $0 \leq k \leq 500$. \\ \\
-The next $k$ integers each represent a record identifier $n$, $0 \leq n \leq 2^{31}$
+The first line contains the number of records $k$, $1 \leq k \leq 500$. \\ \\
+Each of the next $k$ lines contains an integer representing a record identifier $n$, $0 \leq n < 2^{31}$.\\ \\
+You can assume all inputs are given in decimal, and you need to convert them into 32-bits unsigned integers to get $l$, $r$ and $N$ for each $n$.
 
 \OutputFile
-On each line, print three space-separated integers for every input record, denoting the most significant bit $m$ of $n$, least significant bit $l$ of $n$, and number of significant bits of $n$ $N$, respectively. You can assume all inputs are represented with 32-bits (i.e. the most significant bit of $8$ is $0$, not $1$).
+On each line, print three space-separated integers for every input record, denoting the leftmost bit $l$ of $n$, the rightmost bit $r$ of $n$, and number of 1-bits bits $N$ of $n$, respectively. \\ \\
 
+For further clarification, see the explanation provided for the first example below.
 \Examples
 
 \begin{example}
 \exmp{
-1 8
+1
+8
 }{%
 0 0 1
 }%
@@ -25,7 +27,10 @@ On each line, print three space-separated integers for every input record, denot
 
 \begin{example}
 \exmp{
-3 45 68 23
+3
+45
+68
+23
 }{%
 0 1 4
 0 0 2
@@ -33,5 +38,5 @@ On each line, print three space-separated integers for every input record, denot
 }%
 \end{example} \\
 \Explanation
-For the first example, $8$ is represented as $0x00000001$ (writing as hexadecimal for simplicity). Thus, the most significant bit (furthest left) is 0, the least significant bit (furthest right) is 0, and the number of significant bits (number of 1's) is 1. 
+For the first example, $8$ is represented as $0x00000008$ (written in hexadecimal for simplicity). Thus, the left most bit is 0, the right most bit is 0, and the number of 1-bits is 1.
 \end{problem}
