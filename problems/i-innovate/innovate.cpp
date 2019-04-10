@@ -41,7 +41,6 @@ int main() {
       string line;
       for (int i = 0; i < n + 1; ++i) {
         getline(cin, line);
-        cout << line << endl;
         if (i > 0) strs.push_back(line);
       }
       vector<vector<string> > splits(strs.size(), vector<string>());
@@ -49,7 +48,12 @@ int main() {
         splits[i] = split(strs[i], ' '); // split by whitespace
       }
 
-      for (int i = 0; i < strs.size(); ++i) moveStrings(splits, i); // call helper
+      int max = 0;
+      for (int i = 0; i < strs.size(); ++i) {
+        if (max < splits[i].size()) max = splits[i].size();
+      }
+
+      for (int i = 0; i < max; ++i) moveStrings(splits, i);
 
       for (int i = 0; i < strs.size(); ++i) {
         string temp = "";
