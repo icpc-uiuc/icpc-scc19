@@ -1,6 +1,6 @@
 \begin{problem}{Diameter}
 {stdin}{stdout}
-{2 seconds}{}{}
+{2 seconds}{256 MB}{}
 
 \pittoresque loves playing a game called Cover'em all. In this game, he is given some points on a 2-D grid, and he finds some straight segments that together cover all the points. Now after finishing finding the segments, \pittoresque is bored and wants to find something interesting about the points. Specifically, he wants to know whats the maximum (square-euclidean) distance between two points among all pair of points in this grid.
 
@@ -12,11 +12,11 @@ The first line contains two integers $n$ and $k$ ($2 \le n \le 10^5$, $1 \le k \
 
 In the following $k$ sections, the first line of each section contains a single integer $m_i$ ($1 \le m_i$), the number of points on segment $i$. And the following $m_i$ lines contains a pair of integer $x_{ij}, y_{ij}$ ($-10^9 \le x_{ij}, y_{ij} \le 10^9$). It is guaranteed that these points are on a common segment.
 
-It is also guaranteed that and $\sum_{i = 1}^{k} m_i = n$. It is \textbf{NOT} guaranteed that the points are in order on a segment, and it is \textbf{NOT} guaranteed that the points don't collide with another. 
+It is also guaranteed that and $\sum_{i = 1}^{k} m_i = n$. It is \textbf{NOT} guaranteed that the points are in order on a segment, and it is \textbf{NOT} guaranteed that the points don't collide with another.
 
 \OutputFile
 
-Output the maximum \textit{square}-euclidean distance among all pairs of points. 
+Output the maximum \textit{square}-euclidean distance among all pairs of points.
 
 \Examples
 
