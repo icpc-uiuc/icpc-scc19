@@ -1,6 +1,6 @@
 \begin{problem}{Hamiltonian Farm}
 {stdin}{stdout}
-{1 seconds}{}{}
+{5 seconds}{256 MB}{}
 
 Last year, your team failed on helping the Codefalser \Suzukaze  AK the problemset. Therefore, \Suzukaze decided to retire from competitive programming and became a farmer since he wants to own a farm as \pittoresque does. \Suzukaze is an orange-lover so he decided to plant only orange trees in his farm in spring. Winter is coming next week! \Suzukaze is planning to walk inside his farm to harvest his favorite fruit. However, as a forgetful farmer, \Suzukaze loses his memory about the configuration of his farm. Fortunately, as a careful programmer, \Suzukaze stored the configuration of his farm in the computer as a function in case of he gets into this kind of desperate situation.
 \par
@@ -16,7 +16,7 @@ $$f(i,j)=
 where $i$ and $j$ are the indices of the vertices ($1\leq i,j\leq n$), $p$ and $q$ are non-negative integers less than $10^{9}+7$. If $f(i,j)=1$, there is a directed edge from $i$ to $j$.
 
 \par
-As a lazy farmer, \Suzukaze wants to find a path that can visit each orange tree exact once. Can you help him find this path in compensation for your failure last year?
+As a lazy farmer, \Suzukaze wants to find a path that can visit each orange tree exactly once. Can you help him find this path in compensation for your failure last year?
 
 \InputFile
 
@@ -24,7 +24,7 @@ The first line contains three integers $n$,\ $p$ and $q$ ($1 \leq n \leq 10^{5}$
 
 \OutputFile
 
-If the path exists, output a path from the beginning vertex to the end vertex as the example shows. Any of the path that satisfies \Suzukaze 's demand will be accepted. Otherwise, output -1, which means that you fail on \Suzukaze 's request again.
+If the path exists, output the vertices on the path from the beginning vertex to the end vertex as the example shows. Any of the path that satisfies \Suzukaze 's demand will be accepted. Otherwise, output -1, which means that you fail on \Suzukaze 's request again.
 
 \Examples
 
@@ -40,5 +40,8 @@ If the path exists, output a path from the beginning vertex to the end vertex as
 2
 }%
 \end{example}
+
+\Explanation 
+The path $1\xrightarrow{}3\xrightarrow{}5\xrightarrow{}6\xrightarrow{}4\xrightarrow{}2$ satisfies \Suzukaze's demand in the example.
 
 \end{problem}

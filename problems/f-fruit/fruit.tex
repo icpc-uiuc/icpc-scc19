@@ -1,7 +1,7 @@
 
 \begin{problem}{Fruit on the Tree}
 {stdin}{stdout}
-{2 second}{}{}
+{2 seconds}{256 MB}{}
 
 ``Triangoes'', a new type of fruit, are in triangular shapes and taste like mangoes. However, nobody in the world has ever seen ``triangoes'' since they always grow implicitly on the tree and hide in the triangles. Formally, a ``triango'' tree is an acyclic undirected connected graph with weighted edges and a ``triango'' is a set of three vertices on the ``triango'' tree such that the lengths of the three simple paths between each pair of these three vertices satisfy the triangle inequality; that is to say, they form a triangle.
 
@@ -11,7 +11,7 @@ After a long expedition, \Suzukaze has eventually found a ``triango'' tree in hi
 
 The first line contains an integer $n$ ($1 \le n \le 10^5$), the number of vertices on the ``triango'' tree. The vertices on the ``triango'' tree are labeled from 1 to $n$.
 
-In the following $n-1$ lines, each of the lines contains 3 integers $u, v, w$ ($1 \le u,v \le n, u \neq v, 1 \le w \le 10^5$), which means that there is an edge with weight $w$ connecting vertex $u$ and vertex $v$.
+In the following $n-1$ lines, each of the lines contains 3 integers $u, v, w$ ($1 \le u,v \le n, u \neq v, 1 \le w \le 10^5$), which means that there is an undirected edge with weight $w$ connecting vertex $u$ and vertex $v$.
 
 It's guaranteed that the input data is an acyclic undirected connected graph.
 

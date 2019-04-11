@@ -82,8 +82,15 @@ A safer solution is using mergesort, in which you need to find a way to combine 
 \par
 A notable thing is that to find the direction of an edge, you need around $log10^{15}$ computations. Therefore, the time limit for this problem is quite strict; you should implement a concise solution to pass the problem.
 
+\section*{I - Innovate}
+This check-in problem is all about string manipulation. The easiest way to solve the problem is to to split each input sentence by whitespace, then iterate from $i=1..maxLen$ - where $maxLen$ represents the maximum number of words in any sentence - and align words at every $i$'th index using whitespace for padding. As long as you're careful with how you insert spaces for padding, this problem should be straightforward.
+
 \section*{J - Juicy}
 
+\section*{K - Koolhash}
+Another check-in problem, Koolhash tests you're ability to bitshift. For the leftmost bit, the easiest way to determine the value is to 'and' each record with $1$ shifted left by 31 bits. One can also note that with the input restriction of $2^{31}$, this bit will always be zero. Can you see why?
 
+\par
+For the rightmost bit, we can just 'and' each record with $1$. Finally, for the number of 1-bits, we just need to check all the bits in the record, and record how many times we see one. This can be done by repeatedly shifting right and determining the leftmost bit through the procedure described above.
 
 \end{document}

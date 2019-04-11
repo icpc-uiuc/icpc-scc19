@@ -137,7 +137,7 @@ At the bottom of every problem, a form appears with places to select the Languag
 \section*{\raggedright \underline{\LARGE How does Codefield handle a submitted program?}}
 \par\large
 
-First, Codefield will compile your program. If the compiler fails to compile your program, Codefield will judge it as Compile Error. Otherwise, Codefield will execute the compiled binary on the secret judge’s inputs. If the execution takes too long it will be judged as Time Limit Exceeded. If it crashes or terminates with non-zero exit status, it will be judged as a Run Time Error. If it uses too much memory, it will be judged as Memory Limit Exceeded. If the execution terminates correctly (exit status 0), Codefield will inspect the output produced to verify that it is correct. If it is incorrect, Codefield will judge the submission as Wrong Answer.
+First, Codefield will compile your program using the same arguments as those specified in ICPC World Final Environment. If the compiler fails to compile your program, Codefield will judge it as Compile Error. Otherwise, Codefield will execute the compiled binary on the secret judge’s inputs. If the execution takes too long it will be judged as Time Limit Exceeded. If it crashes or terminates with non-zero exit status, it will be judged as a Run Time Error. If it uses too much memory, it will be judged as Memory Limit Exceeded. If the execution terminates correctly (exit status 0), Codefield will inspect the output produced to verify that it is correct. If it is incorrect, Codefield will judge the submission as Wrong Answer.
 
 \newpage
 \vspace*{0.1cm}
@@ -153,7 +153,7 @@ You can track the status of your submission in the web interface by choosing you
 
 \section*{\raggedright \underline{\LARGE Clarification Requests}}
 \par\large
-You are not allowed to ask for the clarification requests.
+If you think some statements in the problem need to be clarified, you can ask the proctor for help. The proctor will ask the judge to clarify the problem. 
 
 \section*{\raggedright \underline{\LARGE Possible Judgements}}
 \par\large
@@ -184,7 +184,6 @@ When Codefield has judged your submission, you will get a reply telling you the 
     Wrong Answer means that your program finished within the time limit, but that the answer produced was incorrect. This error is usually the most frustrating one, since typically no extra information will be given. Sometimes, the only way around it is to try to find bugs in your code by constructing tricky test data yourself.
 \end{itemize}
 
-\textbf{All the errors, except the Comilation Error, that come after successful compilation do cost a 20 minute time penalty if a later submission of the problem is accepted.}
-
+\textbf{All the errors, except the Compilation Error, that come after successful compilation do cost a 20 minute time penalty if a later submission of the problem is accepted.}
 
 \end{document}

@@ -1,6 +1,6 @@
 \begin{problem}{Innovative Alignment}
 {stdin}{stdout}
-{2 seconds}{}{}
+{2 seconds}{256 MB}{}
 
 \Stringers can only read books if the $i$'th word of consecutive sentences start at the same position. If this condition is not met, they cannot read their books, and get rather upset. Can you help the \Stringers by aligning all the given words correctly?
 
@@ -11,7 +11,7 @@ The first line contains one integer $n$ ($1 \leq n \leq 10)$, representing the n
 The next $n$ lines that follow contain the sentences to align. Each sentence contains up to $10$ words, and each word has up to $10$ characters. The alphabet for this problem will only consist of uppercase and lowercase English letters.
 \OutputFile
 
-Output the correct alignment of the input strings, such that the $i$'th word of each sentence starts at the same index. 
+Output the correct alignment of the input strings, such that the $i$'th word of each sentence starts at the same index. Note that when aligning words, there is always a space between the longest $i$'th word of any sentence and the first position of the alignment of the $i+1$'th words. Please take a look at the examples (specifically the second) below for clarification. 
 
 \Examples
 
@@ -38,7 +38,8 @@ CTCI    sucks
 Welcome to    check in 
 }%
 \end{example}
-
+\Explanation 
+In the second example, the most important thing to note is the space between the second 's' in 'sucks' and the first alignment position for 'life' and 'check' (i.e. you can think about the index of the second 's' in 'sucks' is 12 and the index of the beginning of 'life' and 'check' is 14).
 
 
 \end{problem}
