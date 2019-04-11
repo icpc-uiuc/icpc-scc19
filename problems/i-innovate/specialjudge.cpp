@@ -36,7 +36,7 @@ int main(int argc,char *args[]){
    freopen(args[4],"r",stdin);
    for(int i=0;i<n;i++){
       getline(cin,user_ans[i]);
-      while(user_ans[i].back()==' ')
+      while(user_ans[i].size()&&user_ans[i].back()==' ')
          user_ans[i].pop_back();
    }
    if(cin>>stmp){
