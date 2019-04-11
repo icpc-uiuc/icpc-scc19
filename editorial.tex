@@ -38,7 +38,7 @@ For each query $(s,t)$, the nominator is the number of co-occurrences of $(s,t)$
 
 The tricky part is that the number of distinct words appearing in the corpus $w$ may be up to $10^5$, so it is impossible to explicitly construct the co-occurrence matrix of size $w \times w$. The observation is that the sum of all elements in this matrix is bounded by the size of corpus, so we can use some sparse-matrix representation techniques (e.g. only recording which entries are non-zero and the values they hold).
 
-\section*{C - Construct Underground System}
+\section*{C - Corns}
 Formally, we need to find the maximum $X$ such that $X \leq W$, and $X = \sum_i p_i$. This seems like a straight forward knapsack implementation. But simply knapsack would require $O(nW)$ time, thus exceeding time limit. \\
 One can notice that there is another constraint, $\sum_i p_i \leq 2 * 10^5$. This indicates means that the number of different $p_i$ is small. Formally, since $1 + ... + T = O(T^2)$, number of distinct $p_i$ is $O(\sqrt{2 * 10^5})$. Therefore, one can group those same items together, and perform multi-knapsack. The total runtime is $O(\sqrt{2 * 10^5} W logN)$(with small constant) by binary lifting idea, or $O(\sqrt{2 * 10^5} W$ by monotonic queue.
 

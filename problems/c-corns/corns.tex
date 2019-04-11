@@ -1,0 +1,47 @@
+\begin{problem}{Corns}
+{stdin}{stdout}
+{5 seconds}{256 MB}{}
+
+\pittoresque is a corn lover and he eats corns every day. One day he visited a new corn shop and decided to purchase some corns for his meal. \pittoresque brought a $W$ dollar bill with him and he always spend as much money as he can to buy corns. To be specific, \pittoresque wants to choose some corns such that the sum of their price is no larger than $W$, and is maximum among all possible choices of corns.
+
+
+\InputFile
+
+The first line contains two integers $n$ and $W$ ($1 \le n \le 10^5$, $1 \le W \le 2 * 10^5$), the number of corns and the bill \pittoresque brought.
+
+In the following $n$ lines, the $i$-th line contains a single integer $p_i$($1 \le p_i \le 2 * 10^5$), the price of corn $i$.
+
+It is guaranteed that $\sum_i p_i \leq 2 * 10^5$.
+
+\OutputFile
+
+Output the maximum sum of price of corns that \pittoresque can purchase.
+
+\Examples
+
+\begin{example}
+\exmp{
+3 10
+1
+1
+11
+}{%
+2
+}%
+\end{example}
+
+\begin{example}
+\exmp{
+4 10
+3
+5
+3
+4
+}{%
+10
+}%
+\end{example}
+
+
+
+\end{problem}
