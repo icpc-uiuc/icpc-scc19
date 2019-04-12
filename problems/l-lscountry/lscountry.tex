@@ -1,0 +1,41 @@
+\begin{problem}{Larger-Smaller Country}
+{stdin}{stdout}
+{2 seconds}{256 MB}{}
+
+\TiChuot loves travelling. In fact, it's his $4_{th}$ most favourite hobby. This time, \TiChuot decides to visit the Country of Larger-Smaller (or
+LS for short). LS consists of $n$ cities numbered from $1$ to $n$. Interestingly, city $i$ is assigned a distinct value $a_i$. Moreover, these cities
+are of $2$ types:
+    \begin{enumerate}
+        \item
+        A city $i$ of this type can only travel to another city $j$ if $a_i < a_j$.
+        \item
+        A city $i$ of this type can only travel to another city $j$ if $a_i > a_j$.
+    \end{enumerate}
+Since each city in LS has its own culture and is very interesting to see, \TiChuot wants to visits all the cities, each exactly once. His trip will
+start from city $1$ and will end at city $n$. As a competitive programmer, \TiChuot always practices, even while travelling. This time, he wants to
+count the number of ways he can schedule his trip given the information above. Can you help him?\\
+
+Since the answer can be large, you only need to output its remainder when divided by $10^9 + 7$.
+
+\InputFile
+The first line contains an integer $n$ $(1 \leq n \leq 5000)$, the number of cities. The second line contains $n$ distinct integers, $a_1, a_2, ...,
+a_n$, denoting the values assigned to these cities $(1 \leq a_i \leq 10^9)$. The third line, contains $n$ integers $b_1, b_2, ..., b_n$ where
+$b_i$ denotes the type of the $i_{th}$ city $(1 \leq b_i \leq 2)$.
+
+\OutputFile
+
+Output on $1$ line an integer which is the desired value modulo $10^9 + 7$.
+
+\Examples
+
+\begin{example}
+\exmp{
+4
+2 3 4 1
+1 2 2 1
+}{%
+1
+}%
+\end{example}
+
+\end{problem}
