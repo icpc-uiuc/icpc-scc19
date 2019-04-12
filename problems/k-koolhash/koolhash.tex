@@ -3,7 +3,7 @@
 {2 seconds}{256 MB}{}
 
 \T has thought of a new hashing function to store administrator records, and he's enlisted you to help him build it! His hash function $\phi(n)$ will output a single integer, and needs the following pieces of information: $l$, $r$, and $N$, where $l$ represents the leftmost bit of  $n$, $r$ represents the rightmost bit of $n$, and $N$ represents the number of 1-bits in $n$. \\ \\
-There aren't too many administrator records, so for now let's assume an unsigned 32-bit number system. Your job is to provide \T with the three components of his hashing function given the number of records $k$, and the unique identifier of each record $n$. And yes, please forget about the absurdity of his hashing algorithm. Unfortunately, \T has never taken a formal CS class.
+There aren't too many administrator records, so for now let's assume an unsigned 32-bit number system. Your job is to provide \T with the three components of his hashing function given the number of records $k$, and the unique identifier of each record $n$. And yes, please forget about the absurdity of his hashing algorithm, since you can't understand his thoughts.
 
 \InputFile
 The first line contains the number of records $k$, $1 \leq k \leq 500$. \\ \\
@@ -11,7 +11,7 @@ Each of the next $k$ lines contains an integer representing a record identifier 
 You can assume all inputs are given in decimal, and you need to convert them into 32-bits unsigned integers to get $l$, $r$ and $N$ for each $n$.
 
 \OutputFile
-On each line, print three space-separated integers for every input record, denoting the leftmost bit $l$ of $n$, the rightmost bit $r$ of $n$, and number of 1-bits bits $N$ of $n$, respectively. \\ \\
+On each line, print three space-separated integers for every input record, denoting the leftmost bit $l$ of $n$, the rightmost bit $r$ of $n$, and number of 1-bits $N$ of $n$, respectively. \\ \\
 
 For further clarification, see the explanation provided for the first example below.
 \Examples
