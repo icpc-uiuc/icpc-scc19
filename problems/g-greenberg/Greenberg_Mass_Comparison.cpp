@@ -1,16 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+#include<bits/stdc++.h>
+using namespace std;
 typedef long long int ll;
+#define base 1000000000
+#define width 9
 template<typename T>
 string to_string(const T& x){
    stringstream ss;
    ss<<x;
    return ss.str();
 }
-
 struct bigN:vector<ll>{
-   const static int base=1000000000,width=9;
    bool negative;
    void trim(){
       while(size()&&!back())  pop_back();
@@ -37,16 +39,58 @@ struct bigN:vector<ll>{
       for(size_t i=0;i<size();i++){
          if(at(i)>=0&&at(i)<base)   continue;
          if(i+1u==size())  push_back(0);
-         ll r=at(i)%base;
+         int r=at(i)%base;
          if(r<0)  r+=base;
          at(i+1)+=(at(i)-r)/base;
          at(i)=r;
       }
    }
+   int abscmp(const bigN &b)const{
+      if(size()>b.size())  return 1;
+      if(size()<b.size())  return -1;
+      for(int i=(int) size()-1;i>=0;i--){
+         if(at(i)>b[i]) return 1;
+         if(at(i)<b[i]) return -1;
+      }
+      return 0;
+   }
+   int cmp(const bigN &b)const{
+      if(negative!=b.negative)   return negative?-1:1;
+      return negative?-abscmp(b):abscmp(b);
+   }
+   bool operator<(const bigN &b)const{return cmp(b)<0;}
+   bool operator>(const bigN &b)const{return cmp(b)>0;}
+   bool operator<=(const bigN &b)const{return cmp(b)<=0;}
+   bool operator>=(const bigN &b)const{return cmp(b)>=0;}
+   bool operator==(const bigN &b)const{return !cmp(b);}
+   bool operator!=(const bigN &b)const{return cmp(b)!=0;}
+   bigN abs()const{
+      bigN res=*this;
+      res.negative=0;
+      return res;
+   }
+   bigN operator-()const{
+      bigN res=*this;
+      res.negative=!negative;
+      res.trim();
+      return res;
+   }
    bigN operator+(const bigN &b)const{
+      if(negative)   return -(-(*this)+(-b));
+      if(b.negative) return *this-(-b);
       bigN res =*this;
       if(b.size()>size())  res.resize(b.size());
       for(size_t i=0;i<b.size();i++)   res[i]+=b[i];
+      res.carry();res.trim();
+      return res;
+   }
+   bigN operator-(const bigN &b)const{
+      if(negative)   return -(-(*this)-(-b));
+      if(b.negative) return *this+(-b);
+      if(abscmp(b)<0)   return -(b-(*this));
+      bigN res=*this;
+      if(b.size()>size())  res.resize(b.size());
+      for(size_t i=0;i<b.size();i++)   res[i]-=b[i];
       res.carry();res.trim();
       return res;
    }
@@ -63,6 +107,30 @@ struct bigN:vector<ll>{
       res.trim();
       return res;
    }
+   bigN operator/(const bigN &b)const{
+		int norm=base/(b.back()+1);
+		bigN x=abs()*norm;
+		bigN y=b.abs()*norm;
+		bigN q,r;
+		q.resize(x.size());
+		for(int i=int(x.size())-1;i>=0;i--){
+			r=r*base+x[i];
+			int s1=r.size()<=y.size()?0:r[y.size()];
+			int s2=r.size()<y.size()?0:r[y.size()-1];
+			int d=(ll(base)*s1+s2)/y.back();
+			r=r-y*d;
+			while(r.negative){
+            r=r+y;d--;
+         }
+			q[i]=d;
+		}
+		q.negative=negative!=b.negative;
+      q.trim();
+		return q;
+	}
+	bigN operator%(const bigN &b)const{
+		return *this-(*this/b)*b;
+	}
    friend istream& operator>>(istream &ss,bigN &b){
 		string s;
       ss>>s;b=s;
@@ -103,6 +171,7 @@ int main(){
    int n;
    while(t--){
       cin>>n;
-      cout<<b[n]<<endl;
+      bigN tmp = b[n]%(1000000007);
+      cout<<tmp<<endl;
    }
 }
