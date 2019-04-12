@@ -5,7 +5,7 @@
 Linguist Joseph Greenberg proposed the method of mass comparison for determining genetic relatedness between languages. In this method, $N$ languages are categorized into one or more families. Formally, given a set of $N$ different languages $\mathcal{L} = \{L_1, \hdots, L_N\}$, a relation analysis is a set of families $\mathcal{F}$, satisfying the following properties:
 \begin{itemize}
 \item $\mathcal{F} = \{F_1, \hdots, F_k\}$ for some $k$
-\item For $1 \le i \le k$, $F_i = \{L_{i,1}, \hdots, L_{i,m_i}\}$ for some $m_i > 0$
+\item For $1 \le i \le k$, $F_i \subset \mathcal{L}$ and $F_i \ne \varnothing$
 \item For $1 \le i,j \le k, i \ne j$, $F_i \cap F_j = \varnothing$
 \item $\cup_{1 \le i \le k}{F_i} = \mathcal{L}$
 \end{itemize}
@@ -19,7 +19,7 @@ In the following $T$ lines, each line contains a single integer $N$ ($1 \le N \l
 
 \OutputFile
 
-For each test case, output a line containing the answer for the queried $N$.
+For each test case, output a line containing the answer for the queried $N$, modulo $(10^9+7)$.
 
 \Examples
 

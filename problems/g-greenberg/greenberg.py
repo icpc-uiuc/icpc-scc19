@@ -16,5 +16,5 @@ for i in range(1,NMAX):
 t = int(input())
 for tt in range(t):
   n = int(input())
-  print(b[n])
+  print(b[n] % 1000000007)
 

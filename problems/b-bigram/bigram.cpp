@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int gcd (int p, int q) { return q == 0 ? p : gcd(q, p%q); }
+
 int main () {
   cin.tie(0);
   ios_base::sync_with_stdio(0);
@@ -21,7 +23,12 @@ int main () {
   while (q--) {
     string s, t; cin >> s >> t;
     if (den[s] == 0) printf("Insufficient data\n");
-    else printf("%.4f\n", (double)num[{s,t}] / den[s]);
+    else {
+      int g = gcd(num[{s,t}], den[s]);
+      int p = num[{s,t}] / g;
+      int q = den[s] / g;
+      printf("%d/%d\n", p, q);
+    }
   }
 
   return 0;
