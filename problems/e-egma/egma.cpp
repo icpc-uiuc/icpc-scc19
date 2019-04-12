@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int maxN = 5e5 + 10;
+const int maxN = 2e5 + 10;
 
 int n, q, a[maxN], t[5 * maxN], res[maxN];
 vector < pair < int, int > > qu[maxN];

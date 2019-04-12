@@ -13,20 +13,20 @@ set < pi > qu;
 
 int getn(int testcase) {
     if (testcase < 2) return (rand() % 20) + 1;
-    if (testcase < 5) return (rand() % 500000) + 1;
-    return 500000;
+    if (testcase < 5) return (rand() % 200000) + 1;
+    return 200000;
 }
 
 int getq(int testcase) {
     if (testcase < 2) return (rand() % 10) + 1;
-    if (testcase < 5) return (rand() % 500000) + 1;
-    return 500000;
+    if (testcase < 5) return (rand() % 200000) + 1;
+    return 200000;
 }
 
 int geta(int testcase) {
     if (testcase < 5) return rand() % 10;
-    if (testcase < 10) return rand() % 500000;
-    return rand() % 100000;
+    if (testcase < 10) return rand() % 200000;
+    return rand() % 50000;
 }
 
 pi getquery(int testcase, int n) {
