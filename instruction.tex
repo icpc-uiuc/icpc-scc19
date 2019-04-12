@@ -7,32 +7,6 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{color} % for colored text
-\usepackage{import} % for changing current dir
-\usepackage{epigraph}
-\usepackage{daytime} % for displaying version number and date
-\usepackage{wrapfig} % for having text alongside pictures
-\usepackage{verbatim}
-\usepackage{wrapfig}
-\usepackage{caption}
-\usepackage{xcolor}
-
-
-\newcommand{\importproblem}[2]{\import{#1-#2/}{./#2.tex}}
-\newcommand{\Suzukaze}{\textbf{\textcolor[rgb]{1,0.5,0}{Suzukaze}}\,}
-\newcommand{\pittoresque}{\textbf{\textcolor[rgb]{1,0.5,0}{pittoresque}}\,}
-\newcommand{\master}{\textbf{\textcolor[rgb]{1,0.5,0}{master}}\,}
-\newcommand{\grandmaster}{\textbf{\textcolor[rgb]{1,0,0}{grandmaster}}\,}
-
-%\revision{{\input{revision.temp}}[\number\day.\number\month.\number\year\ \daytime]}
-
-%\renewcommand{\t}[1]{\ifmmode{\mathtt{#1}}\else{\texttt{#1}}\fi}
-
-% Treat all pictures as MPS (metapost) when using PDFLaTeX tool
-%\ifx\pdftexversion\undefined
-%\else
-%  \DeclareGraphicsRule{*}{eps}{*}{}
-%\fi
 
 \contest
 {UIUC ICPC Spring Coding Contest 2019}%
@@ -47,34 +21,8 @@
 
 \raggedbottom
 
-%\displayauthorinfootertrue
-%\displayauthortrue
-%\displaydevelopertrue
-%\displayorigintrue
-%\revisionsignaturetrue
-%\intentionallyblankpagestrue
-
 %<-----Instruction Start From Here----->
-\vspace*{1.0cm}
-\centerline{\textbf{\huge Codefield Credentials}}
-\vspace*{1.0cm}
 
-\centerline{
-\framebox(400,100){
-\parbox{\textwidth}{
-    \begin{center}
-      \textbf{\LARGE Team Name}\\
-      \vspace*{0.5cm}
-      \textbf{\LARGE Codefield username:} \\
-      \vspace*{0.25cm}
-      \textbf{\LARGE Codefield password:}
-    \end{center}
-  }
-}
-}
-
-
-\newpage
 \vspace*{0.5cm}
 
 \centerline{\textbf{\huge Contest Instruction}}
@@ -86,10 +34,6 @@ You can only use one EWS computer and no any electronic devices are allowed. Oth
 \section*{\raggedright \underline{\LARGE Scoring}}
 \par\large
 Teams are ranked by the number of problems solved, with teams solving the same number of problems ranked by least total time. The total time is the sum of the time consumed for each problem solved.  The time consumed for a solved problem is the time elapsed from the beginning of the contest to the submission of the first accepted run plus 20 penalty minutes for every previously rejected run for that problem.  There is no time consumed for a problem that is not solved. Teams solving the same number of problems with the same total time are ranked by the smallest elapsed time of their last accepted solution (not counting penalties for rejected runs).
-
-\section*{\raggedright \underline{\LARGE Reference Materials}}
-\par\large
-For the Spring Coding Contest, teams may bring any amount of printed reference material, including printouts of source code.
 
 \section*{\raggedright \underline{\LARGE Disqualification}}
 \par\large
@@ -137,7 +81,7 @@ At the bottom of every problem, a form appears with places to select the Languag
 \section*{\raggedright \underline{\LARGE How does Codefield handle a submitted program?}}
 \par\large
 
-First, Codefield will compile your program using the same arguments as those specified in ICPC World Final Environment. If the compiler fails to compile your program, Codefield will judge it as Compile Error. Otherwise, Codefield will execute the compiled binary on the secret judge’s inputs. If the execution takes too long it will be judged as Time Limit Exceeded. If it crashes or terminates with non-zero exit status, it will be judged as a Run Time Error. If it uses too much memory, it will be judged as Memory Limit Exceeded. If the execution terminates correctly (exit status 0), Codefield will inspect the output produced to verify that it is correct. If it is incorrect, Codefield will judge the submission as Wrong Answer.
+First, Codefield will compile your program using the same arguments as those specified in ICPC World Final Environment. If the compiler fails to compile your program, Codefield will judge it as Compile Error. Otherwise, Codefield will execute the compiled binary on the secret judge’s inputs. \textbf{For JAVA users, note that the jvm arguments are somewhat non standard so please take care of the stack size, e.g., deep recursions.} If the execution takes too long it will be judged as Time Limit Exceeded. If it crashes or terminates with non-zero exit status, it will be judged as a Run Time Error. If it uses too much memory, it will be judged as Memory Limit Exceeded. If the execution terminates correctly (exit status 0), Codefield will inspect the output produced to verify that it is correct. If it is incorrect, Codefield will judge the submission as Wrong Answer.
 
 \newpage
 \vspace*{0.1cm}
