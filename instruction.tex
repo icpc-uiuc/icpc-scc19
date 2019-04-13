@@ -46,88 +46,16 @@ Any team that jeopardizes the integrity of the contest or violates the rules of 
     \item disobeying site officials’ instructions regarding appropriate conduct.
 \end{itemize}
 
-\section*{\raggedright \underline{\LARGE Using Codefield}}
+% \newpage
+% \vspace*{0.1cm}
+
+\section*{\raggedright \underline{\LARGE Using DOMJudge}}
 \par\large
-Your login credentials are provided on the first page. Your must write your code in Java, C++, or Python 3 and submit the code to Codefield. Codefield will then compile your code and run it on some secret input. After some careful deliberation, you will get a judgement informing you whether your code behaved as expected or not.
-
-\newpage
-\vspace*{0.1cm}
-
-\section*{\raggedright \underline{\LARGE Program Structure}}
-\par\large
-
-\begin{itemize}
-    \item Input is obtained from \textit{standard input}:
-        \begin{itemize}
-            \item In Java, use \textbf{System.in}.
-            \item In C++, use \textbf{cin} or \textbf{scanf}.
-            \item In Python, use \textbf{sys.stdin} or \textbf{input}.
-        \end{itemize}
-    \item All test cases used in judging will conform to the input specifications. It is not necessary for you to detect invalid input. If, for example, the problem statement specifies that an integer is positive, you do not need to check for or handle non-positive integers (or non-integers). Always read the specification carefully.
-    \item Output is sent to \textit{standard output}:
-        \begin{itemize}
-            \item In Java, use \textbf{System.out}.
-            \item In C++, use \textbf{cout} or \textbf{printf}.
-            \item In Python, use \textbf{print}.
-        \end{itemize}
-    \item Your program should refer to no files, either for input or output. Trying to read from an input file is likely to cause a run-time error.
-    \item Java programmers: Do not put your code in a package (i.e., do not put a line like “package hello;” at the top of your source file). Be careful, by default an IDE may add a package line automatically.  A package declaration unnecessarily complicates submission or causes a run-time error.
-\end{itemize}
-
-\section*{\raggedright \underline{\LARGE Submitting in the Browser}}
-\par\large
-At the bottom of every problem, a form appears with places to select the Language and a place to drag or choose files to upload.  Typically you upload just a single source file that you have thoroughly tested.
-
-\section*{\raggedright \underline{\LARGE How does Codefield handle a submitted program?}}
-\par\large
-
-First, Codefield will compile your program using the same arguments as those specified in ICPC World Final Environment. If the compiler fails to compile your program, Codefield will judge it as Compile Error. Otherwise, Codefield will execute the compiled binary on the secret judge’s inputs. \textbf{For JAVA users, note that the jvm arguments are somewhat non standard so please take care of the stack size, e.g., deep recursions.} If the execution takes too long it will be judged as Time Limit Exceeded. If it crashes or terminates with non-zero exit status, it will be judged as a Run Time Error. If it uses too much memory, it will be judged as Memory Limit Exceeded. If the execution terminates correctly (exit status 0), Codefield will inspect the output produced to verify that it is correct. If it is incorrect, Codefield will judge the submission as Wrong Answer.
-
-\newpage
-\vspace*{0.1cm}
-
-As soon as an error is detected, Codefield will stop and report that error. Each test is run with a new invocation of your program, so your program does not need to be adapted in any way to handle multiple test files. Each test file will follow the input specification for the problem.
-
-If your program passes all test files successfully, it will be judged as Accepted.
-
-
-\section*{\raggedright \underline{\LARGE Tracking Your Submissions}}
-\par\large
-You can track the status of your submission in the web interface by choosing your icon from the top right menu. On this page you will see a list of all submissions you have made, in reverse chronological order. As the submission proceeds through the judgement process your submissions page will reflect this.
+Please refer to the \textbf{Spring Coding Contest Guide} under the \textbf{Rule} category.
 
 \section*{\raggedright \underline{\LARGE Clarification Requests}}
 \par\large
 If you think some statements in the problem need to be clarified, you can ask the proctor for help. The proctor will ask the judge to clarify the problem.
 
-\section*{\raggedright \underline{\LARGE Possible Judgements}}
-\par\large
-When Codefield has judged your submission, you will get a reply telling you the status of your submission. The following judgements are possible:
-\begin{itemize}
-    \item \textbf{Accepted:}\\
-    Accepted means that we were very happy with your program, and that it (as far as Codefield could tell) solved the problem correctly. Congratulations!
-    \item \textbf{Compile Error:}\\
-    Compile Error means that Codefield failed to compile your source code. In order to help you debug the error, the compiler output will be available as extra information. This error does not cause a 20 minute time penalty.
-    \item \textbf{Run Time Error:}\\
-    Run Time Error means your program crashed during execution with our secret test input. More precisely it means that it terminated with a non-zero exit code, or with an uncaught exception. Common examples:
-    \begin{itemize}
-        \item array out-of-bounds references
-        \item stack overflows (likely infinite recursion)
-        \item invalid memory references (e.g., dereferencing a null pointer)
-        \item trying to open a file
-    \end{itemize}
-
-\end{itemize}
-
-\newpage
-\vspace*{0.1cm}
-
-\begin{itemize}
-    \item \textbf{Time Limit Exceeded:}\\
-    Time Limit Exceeded means that your program ran for too long. When the time limit is exceeded, the program is terminated. The output produced is not inspected until your program has finished successfully, so getting Time Limit Exceeded does not mean that the output you had produced so far was correct.  The time limit is applied separately to each run with judges secret test data.  Usually there are multiple test runs before a submission is accepted.
-    \item \textbf{Wrong Answer:}\\
-    Wrong Answer means that your program finished within the time limit, but that the answer produced was incorrect. This error is usually the most frustrating one, since typically no extra information will be given. Sometimes, the only way around it is to try to find bugs in your code by constructing tricky test data yourself.
-\end{itemize}
-
-\textbf{All the errors, except the Compilation Error, that come after successful compilation do cost a 20 minute time penalty if a later submission of the problem is accepted.}
 
 \end{document}
