@@ -43,9 +43,8 @@ Formally, we need to find the maximum $X$ such that $X \leq W$, and $X = \sum_i 
 One can notice that there is another constraint, $\sum_i p_i \leq 2 * 10^5$. This indicates means that the number of different $p_i$ is small. Formally, since $1 + ... + T = O(T^2)$, number of distinct $p_i$ is $O(\sqrt{2 * 10^5})$. Therefore, one can group those same items together, and perform multi-knapsack. The total runtime is $O(\sqrt{2 * 10^5} W logN)$(with small constant) by binary lifting idea, or $O(\sqrt{2 * 10^5} W$ by monotonic queue.
 
 
-\section*{D - Diameter}
-One can notice that the farthest pair of points would never involve any point that is in the middle of a segment. Therefore, one can sort all the points on each of the segments, take the two endpoints and brute force the answer. Total runtime is $O(n logn + k^2)$. \\
-Another approach is to ignore the segmetns, and directly compute the answer with standard diameter algorithm, namely, computing the convex hull and do rotate caterpillars. The runtime for this is $O(n logn)$(In fact $O(nlog k)$ if using output sensitive convex hull algorithms) \\
+\section*{D - Dinner}
+You can check the paper "Counting convex polygons in planar point sets" by Mitchell et al. Our intended solution has complexity $O(n^3logn)$, which is not as optimal as stated in the paper. 
 
 
 \section*{F - Fruit on the Tree}
@@ -90,6 +89,8 @@ Lets first forget about the apple trees. The problem is asking us to find a span
 
 \section*{K - Koolhash}
 Another check-in problem, Koolhash tests you're ability to bitshift. For the leftmost bit, the easiest way to determine the value is to 'and' each record with $1$ shifted left by 31 bits. One can also note that with the input restriction of $2^{31}$, this bit will always be zero. Can you see why?
+
+
 
 \par
 For the rightmost bit, we can just 'and' each record with $1$. Finally, for the number of 1-bits, we just need to check all the bits in the record, and record how many times we see one. This can be done by repeatedly shifting right and determining the leftmost bit through the procedure described above.
