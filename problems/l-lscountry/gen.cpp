@@ -22,7 +22,7 @@ int main()
         vector < int > a;
         int v = 0;
         for (int i = 1; i <= n; ++i) {
-            v += (rand() % 100000);
+            v += (rand() % 100000) + 1;
             a.push_back(v);
         }
         random_shuffle(a.begin(), a.end());

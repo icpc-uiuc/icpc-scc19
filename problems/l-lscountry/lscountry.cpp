@@ -1,4 +1,5 @@
 #include <iostream>
+#include <assert.h>
 
 using namespace std;
 
@@ -85,6 +86,8 @@ int main() {
     cin >> n;
     for (int i = 1; i <= n; ++i) scanf("%d", &c[i].v), c[i].i = i;
     for (int i = 1; i <= n; ++i) scanf("%d", &c[i].t);
+    for (int i = 1; i < n; ++i)
+        assert(c[i].v != c[i + 1].v);
     sort(c + 1, c + n + 1);
     /*for (int i = 1; i <= n; ++i) cout << c[i].i << " ";
     cout << endl;*/
