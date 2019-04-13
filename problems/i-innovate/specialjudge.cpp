@@ -8,12 +8,12 @@ int maxn[11];
 string exp_ans[10],user_ans[10];
 
 int main(int argc,char *args[]){
-   freopen(args[2],"r",stdin);
+   ifstream in(args[1]);//freopen(args[2],"r",stdin);
    int n;
-   cin>>n;
-   getline(cin,stmp);
+   in>>n;//cin>>n;
+   getline(in,stmp);//getline(cin,stmp);
    for(int i=0;i<n;i++){
-      getline(cin,s[i]);
+      getline(in,s[i]);//getline(cin,s[i]);
       ss.clear();
       ss.str("");
       ss<<s[i];
@@ -33,21 +33,24 @@ int main(int argc,char *args[]){
          }
       }
    }
-   freopen(args[4],"r",stdin);
+   //freopen(args[4],"r",stdin);
    for(int i=0;i<n;i++){
       getline(cin,user_ans[i]);
       while(user_ans[i].size()&&user_ans[i].back()==' ')
          user_ans[i].pop_back();
    }
    if(cin>>stmp){
-      cout<<0<<endl;
-      return 0;
+      //cout<<0<<endl;
+      //return 0;
+      return 43;
    }
    for(int i=0;i<n;i++)
       if(user_ans[i]!=exp_ans[i]){
-         cout<<0<<endl;
-         return 0;
+         //cout<<0<<endl;
+         //return 0;
+         return 43;
       }
-   cout<<1<<endl;
+   //cout<<1<<endl;
    fclose(stdin);
+   return 42;
 }
